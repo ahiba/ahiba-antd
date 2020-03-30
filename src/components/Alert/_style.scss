@@ -1,0 +1,39 @@
+.viking-alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem; 
+}
+  .viking-alert .viking-alert-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.75rem 1.25rem;
+    color: inherit;
+    cursor: pointer; }
+  .viking-alert .bold-title {
+    font-weight: 700; }
+  .viking-alert .viking-alert-desc {
+    font-size: 0.875rem;
+    margin: 0.3rem 0 0; }
+
+.viking-alert-default {
+  color: #fff;
+  background: #0d6efd;
+  border-color: #0262ef; }
+
+.viking-alert-success {
+  color: #fff;
+  background: #52c41a;
+  border-color: #49ad17; }
+
+.viking-alert-warning {
+  color: #fff;
+  background: #fadb14;
+  border-color: #efd005; }
+
+.viking-alert-danger {
+  color: #fff;
+  background: #dc3545;
+  border-color: #d32535; }

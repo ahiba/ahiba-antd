@@ -1,0 +1,37 @@
+.viking-tabs-nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  border-bottom: 1px solid #dee2e6; }
+
+.viking-tabs-nav-item {
+  display: block;
+  padding: 0.5rem 1rem;
+  cursor: pointer; }
+  .viking-tabs-nav-item:hover, .viking-tabs-nav-item:focus {
+    color: #0d6efd; }
+  .viking-tabs-nav-item.disabled {
+    color: #6c757d;
+    pointer-events: none;
+    cursor: default;
+    background-color: transparent;
+    border-color: transparent; }
+  .viking-tabs-nav-item.is-active {
+    color: #0d6efd; }
+
+.nav-line .viking-tabs-nav-item.is-active {
+  border-bottom: 2px solid #0d6efd; }
+
+.nav-card .viking-tabs-nav-item {
+  border: 1px solid transparent;
+  margin-bottom: -1px; }
+  .nav-card .viking-tabs-nav-item.is-active {
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff; }
+
+.viking-tabs-content {
+  margin-top: 1rem; }

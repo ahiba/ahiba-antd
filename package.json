@@ -21,7 +21,8 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
     "react-transition-group": "^4.3.0",
-    "typescript": "^3.7.5"
+    "typescript": "^3.7.5",
+    "vikingship": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
