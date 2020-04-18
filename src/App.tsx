@@ -12,18 +12,75 @@ import Transition from './components/Transition/transition'
 import Alert from './components/Alert/alert'
 import Tabs from './components/Tabs/tabs'
 import TabItem from './components/Tabs/tabItem'
-
+import Input from './components/Input/input'
+import AutoComplete, { DataSourceType } from './components/AutoComplete/autoComplete'
+import Upload from './components/Upload/upload'
 
 import './styles/index.scss'
 
 library.add(fas)
 
+interface LakerPlayreProps {
+  value: string;
+  number: number;
+}
 function App() {
   const [ show, setShow ] = useState(false)
   const [ alertShow, setAlertShow ] = useState(true)
-  console.log('当前的alertShow', alertShow)
+
+  const lakers = ['bradley', 'pope', 'caruso', 'cook', 'cousins', 
+  'james', 'AD', 'green', 'howard', 'kuzma', 'McGee', 'rando']
+  const lakersWithNumber = [
+    {value:'bradley', number:23},
+    {value:'pope', number:33},
+    {value:'caruso', number:43},
+    {value:'cook', number:53},
+    {value:'cousins', number:63},
+    {value:'james', number:73},
+  ]
+  // const handelFetch = (query: string) => {
+  //   return lakers.filter(name => name.includes(query))
+  // }
+  // const handelFetch = (query:string) => {
+  //   return lakersWithNumber.filter(player => player.value.includes(query))
+  // }
+  const handelFetch = (query:string) => {
+    return fetch(`https://api.github.com/search/users?q=${query}`)
+    .then(res => res.json())
+    .then(({ items }) =>{
+      console.log(items)
+      const formatItems = items.slice(0,10).map((item:any) => (
+        {
+          value: item.login, ...item
+        }
+      ))
+      return formatItems
+    })
+  }
+  const renderOption = (item:DataSourceType<LakerPlayreProps>) =>{
+    return (
+      <>
+        <h2>Name:{item.value}</h2>
+        <p>Number:{item.number}</p>
+      </>
+    )
+  }
+  // const renderOption = (item:string) =>{
+  //   return (
+  //     <h2>Name:{item}</h2>
+  //   )
+  // }
   return (
     <div className="App">
+      <Upload 
+        action="http://baidu.com"
+        name="file"
+        data={{"key": "value"}}
+        multiple={true}
+        drag={true}
+      >
+         <Button btnType={ButtonType.Primary} size={ButtonSize.Large} className="klass">hello</Button>
+      </Upload>
       <Button size={ButtonSize.Large} onClick={() => {setShow(!show)}}>Toggle</Button>
       
       <Transition
@@ -113,6 +170,13 @@ function App() {
           <li>123</li>
         </Tabs>
       </div>
+      <Input size='lg' disabled placeholder="lg" />
+      <Input size='sm' disabled placeholder="sm" />
+      <Input icon="address-book" prepend="http://" />
+      <AutoComplete 
+        fetchSuggestions={handelFetch} 
+        renderOption={renderOption}/>
+
     </div>
     
   );
