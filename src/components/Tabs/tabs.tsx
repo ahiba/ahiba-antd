@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import classNames from 'classnames'
 import { TabItemProps } from './tabItem'
 
-interface TabsProps {
+export interface TabsProps {
   defaultIndex?: number;
   className?: string;
   onSelect?: (selectIndex: number) => void;
