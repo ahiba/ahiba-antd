@@ -1,6 +1,6 @@
 {
   "name": "ahiba-antd",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React components library",
   "author": "ahiba",
   "private": false,
@@ -27,7 +27,7 @@
     "@fortawesome/react-fontawesome": "^0.1.9",
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
-    "react-transition-group": "^4.3.0",
+    "react-transition-group": "^4.3.0"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
